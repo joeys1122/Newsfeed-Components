@@ -188,10 +188,15 @@ function articleMaker(obj) {
   articlePara1.textContent = obj.firstParagraph;
   articlePara2.textContent = obj.secondParagraph;
   articlePara3.textContent = obj.thirdParagraph;
-  expandButton.textContent = '+';
+  expandButton.textContent = 'Click to Expand';
 
   expandButton.addEventListener('click', () => {
     article.classList.toggle('article-open');
+    if (article.className === 'article article-open') {
+      expandButton.textContent = 'Click to Close';
+    } else {
+      expandButton.textContent = 'Click to Expand';
+    }
   });
 
   return article;
